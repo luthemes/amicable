@@ -74,7 +74,8 @@ mix.then( () => {
 	let files = [
 		'mix-manifest.json',
 		`${exportPath}/vendor/bin`,
-	 	`${exportPath}/vendor/composer/installers`
+		`${exportPath}/vendor/composer/installers`,
+		`${exportPath}/public/mix-manifest.json`
 	];
 
 	files.forEach( file => {

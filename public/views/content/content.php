@@ -20,6 +20,12 @@
 			<?php Benlumia007\Backdrop\Entry\display_comments_link(); ?>
 		</div>
 	</header>
+	<figure class = "post-thumbnail alignwide">
+		<?php if ( has_post_thumbnail() ) {
+			the_post_thumbnail( 'amicable-large-thumbnails' );
+		}
+		?>
+	</figure>
 	<div class="entry-excerpt">
 		<?php the_excerpt(); ?>
 	</div>

@@ -20,6 +20,7 @@ $amicable = Benlumia007\Backdrop\Framework::get_instance();
 $amicable->menus = new Benlumia007\Backdrop\Menu\Menu(
 	$args = [
 		'primary' => esc_html__( 'Primary Navigation', 'amicable' ),
+		'socal'   => esc_html__( 'Social Navigation', 'amicable' ),
 	]
 );
 

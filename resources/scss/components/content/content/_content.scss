@@ -54,5 +54,29 @@
                 }
             }
         }
+
+        .entry-taxonomies {
+            text-align: center;
+
+            .cat-link,
+            .tag-link {
+                display: block;
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+
+            .tag-list,
+            .cat-list {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .entry-content,
+    .entry-excerpt {
+        a {
+            color: #000080;
+            text-decoration: none;
+        }
     }
 }

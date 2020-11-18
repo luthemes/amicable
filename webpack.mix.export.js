@@ -5,10 +5,10 @@
  * uploading to a site or zipping. Edit the `files` or `folders` variables if
  * you need to change something.
  *
- * @package   Mythic
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2018 Justin Tadlock
- * @link      https://themehybrid.com/themes/mythic
+ * @package   Amicable
+ * @author    Benjamin Lu <benlumia007@gmail.com>
+ * @copyright 2020 Benjamin Lu
+ * @link      https://github.com/benlumia007/amicable
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
@@ -18,7 +18,7 @@ const rimraf  = require( 'rimraf' );
 const fs      = require( 'fs' );
 
 // Folder name to export the files to.
-let exportPath = 'initiator';
+let exportPath = 'amicable';
 
 // Theme root-level files to include.
 let files = [

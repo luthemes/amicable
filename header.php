@@ -24,5 +24,5 @@
 			<?php Benlumia007\Backdrop\Site\display_site_title(); ?>
 			<?php Benlumia007\Backdrop\Site\display_site_description(); ?>
 		</div>
-		<?php Benlumia007\Backdrop\View\display( 'menu', [ 'primary' ] ); ?>
 	</header>
+	<?php Benlumia007\Backdrop\View\display( 'menu', [ 'primary' ] ); ?>

@@ -66,11 +66,6 @@ add_action( 'after_setup_theme', function() {
 		add_theme_support( 'post-thumbnails' );
 
 		/**
-		 * By add_image_size( 'amicable-small-thumbnails', 324, 324, true );. This should be used for content in the home for blogs.
-		 */
-		add_image_size( 'amicable-small-thumbnails', 324, 324, true );
-
-		/**
 		 * By add_image_size( 'amicable-medium-thumbnails', 810, 396, true );. This should be used for content that has sidebars.
 		 */
 		add_image_size( 'amicable-medium-thumbnails', 800, 386, true );

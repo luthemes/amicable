@@ -31,7 +31,7 @@ add_action( 'after_setup_theme', function() {
 		 * Content width is a theme feature, when set, it can set the maximum allow width for any content in teh theme like
 		 * oEmbeds and images added to posts.
 		 */
-		$GLOBALS['content_width'] = 810;
+		$GLOBALS['content_width'] = 800;
 
 		/**
 		 * By adding add_theme_support( 'title-tag' );, this will let WordPress manage all document titles and should be use instead of wp_title();.
@@ -79,11 +79,6 @@ add_action( 'after_setup_theme', function() {
 		 * By add_image_size( 'initiator-large-thumbnails', 1170, 614, true );. This should be used for content that has no sidebars.
 		 */
 		add_image_size( 'initiator-large-thumbnails', 1170, 614, true );
-
-		/**
-		 * By add_theme_support( 'wp-block-styles' );. This should enable block styles on the frontend.
-		 */
-		add_theme_support( 'wp-block-styles' );
 
 		/**
 		 * By adding add_theme_support( 'editor-styles' ); and add_editor_style(); to enable styles in the backend of the editor.

@@ -32,3 +32,7 @@ $amicable->sidebars = new Benlumia007\Backdrop\Sidebar\Sidebar(
 		],
 	]
 );
+
+$amicable->admin = new Amicable\Component\Admin;
+
+$amicable->customize = new Amicable\Component\Customize;

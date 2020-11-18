@@ -1,9 +1,9 @@
 <?php
 /**
- * Initiator ( footer.php )
+ * Amicable ( footer.php )
  *
- * @package     Initiator
- * @copyright   Copyright (C) 2019. Benjamin Lu
+ * @package     Amicable
+ * @copyright   Copyright (C) 2020. Benjamin Lu
  * @license     GNU General Public License v2 or later ( https://www.gnu.org/licenses/gpl-2.0.html )
  * @author      Benjamin Lu ( https://benjlu.com )
  */
@@ -13,7 +13,7 @@
 			<?php
 			printf(
 				// Translators: 1 = Date, 2 = Site Link.
-				esc_html__( 'Copyright &#169; %1$s. %2$s', 'initiator' ),
+				esc_html__( 'Copyright &#169; %1$s. %2$s', 'amicable' ),
 				absint( date_i18n( 'Y' ) ),
 				Benlumia007\Backdrop\Site\render_site_link() // phpcs:ignore
 			);
@@ -22,7 +22,7 @@
 			<?php
 			printf(
 				// Translators: 1 = WordPress Link, 2 = Theme Link.
-				esc_html__( 'Powered By %1$s and %2$s', 'initiator' ),
+				esc_html__( 'Powered By %1$s and %2$s', 'amicable' ),
 				Benlumia007\Backdrop\Site\render_cp_link(), // phpcs:ignore
 				Benlumia007\Backdrop\Site\render_theme_link() // phpcs:ignore
 			);

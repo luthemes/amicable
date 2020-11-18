@@ -1,9 +1,9 @@
 <?php
 /**
- * Initiator ( header.php )
+ * Amicable ( header.php )
  *
- * @package     Initiator
- * @copyright   Copyright (C) 2019. Benjamin Lu
+ * @package     Amicable
+ * @copyright   Copyright (C) 2020. Benjamin Lu
  * @license     GNU General Public License v2 or later ( https://www.gnu.org/licenses/gpl-2.0.html )
  * @author      Benjamin Lu ( https://benjlu.com )
  */
@@ -18,7 +18,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="container" class="site-container">
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'initiator' ) ?></a>
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'amicable' ) ?></a>
 	<header id="header" class="site-header">
 		<div class="site-branding">
 			<?php Benlumia007\Backdrop\Site\display_site_title(); ?>

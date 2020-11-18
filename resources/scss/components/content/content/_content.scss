@@ -79,6 +79,10 @@
             text-decoration: none;
         }
     }
+
+    .sticky {
+        font-weight: bold;
+    }
 }
 
 .comments-area {
@@ -330,4 +334,38 @@ p.comment-awaiting-moderation {
 
 .comment-form .comment-form-cookies-consent input[type="checkbox"] {
     margin-right: 0.250em;
+}
+
+.wp-caption {
+    max-width: 100%;
+    margin-bottom: 1.5em;
+}
+
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.wp-caption-text { 
+    text-align: center; 
+}
+
+.wp-caption .wp-caption-text,
+.gallery-caption {
+    background: #eeeeee;
+    font-size: 14px;
+    padding: 0.313em;
+    text-align: center;
+}
+
+.wp-caption .wp-caption-text .jetpack-portfolio-title,
+.wp-caption .wp-caption-text .jetpack-testimonial-title {
+    margin: 0;
+    padding: 0;
+}
+
+.wp-caption p {
+    margin: 0;
+    padding: 0;
 }

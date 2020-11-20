@@ -286,6 +286,11 @@
         display: block;
         margin: 1em 1em 3.6em 1em;
 	}
+
+	.post-thumbnail.alignwide {
+		margin: 1.125em -1.125em;
+		max-width: 41.688em;
+	}
 }
 
 @media screen and (min-width: 41.750em) and (max-width: 46em) {
@@ -347,7 +352,7 @@
 	}
 
 	.post-thumbnail.alignwide {
-		margin: 0 -6.688em;
+		margin: 1.125em -1.125em;
 		max-width: 46em;
 	}
 }

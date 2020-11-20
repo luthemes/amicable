@@ -1,5 +1,5 @@
 # Amicable
-Amicable is a starter theme for WordPress
+Amicable is a starter theme for ClassicPress
 
 ## Requirements
 There are few things that we will need to begin.

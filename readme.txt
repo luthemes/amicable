@@ -22,11 +22,8 @@ Amicable is a ClassicPress theme that gives users the ability to create blogs
 3.0 - Once theme is installed, click on Activate to begin using this theme.
 
 == Changelog ==
-Version: 1.0.3
-- Add Update Manger
-
 Version: 1.0.2 
-- Small changes
+- Update Manager by CodePotent added
 
 Version: 1.0.1
 - Readjust Media Queries for widgets and post thumbnail

@@ -1,38 +1,65 @@
 <?php
 /**
- * Amicable ( framework.php )
+ * Boot the Framework
  *
- * This file is used to create a new framework instance and adds specific features to the theme.
- *
- * @package     Amicable
- * @copyright   Copyright (C) 2020. Benjamin Lu
- * @license     GNU General Public License v2 or later ( https://www.gnu.org/licenses/gpl-2.0.html )
- * @author      Benjamin Lu ( https://benjlu.com )
+ * @package   Amicable
+ * @author    Benjamin Lu <benlumia007@gmail.com>
+ * @copyright 2023. Benjamin Lu
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html
+ * @link      https://luthemes.com/portfolio/amicable
  */
 
-/**
- * Create a new framework instance
+/** ------------------------------------------------------------------------------------------
+ * Create a new application.
+ * -------------------------------------------------------------------------------------------
  *
- * This will create an instance of the framework allowing you to initialize the theme.
+ * This code creates the one true instance of the Backdrop Core Application, which can be access
+ * via the `Backdrop\app()`function or the `Backdrop\App` static class after the application has
+ * been booted.
  */
-$amicable = Benlumia007\Backdrop\Framework::get_instance();
 
-$amicable->menus = new Benlumia007\Backdrop\Menu\Menu(
-	$args = [
-		'primary' => esc_html__( 'Primary Navigation', 'amicable' ),
-		'socal'   => esc_html__( 'Social Navigation', 'amicable' ),
-	]
-);
+$amicable = Backdrop\booted() ? Backdrop\app() : new Backdrop\Core\Application();
 
-$amicable->sidebars = new Benlumia007\Backdrop\Sidebar\Sidebar(
-	$args = [
-		'primary' => [
-			'name' => esc_html__( 'Primary Sidebar', 'amicable' ),
-			'desc' => esc_html__( 'Test', 'amicable' ),
-		],
-	]
-);
+/** ------------------------------------------------------------------------------------------
+ * Register default service providers with the application.
+ * -------------------------------------------------------------------------------------------
+ *
+ * Here are the default service providers that are essential for the theme to function before
+ * booting the application. These service providers form the foundation for the theme.
+ */
 
-$amicable->admin = new Amicable\Component\Admin;
+$amicable->provider( Backdrop\Fonts\Provider::class );
+$amicable->provider( Backdrop\Mix\Provider::class );
+$amicable->provider( Backdrop\Template\Hierarchy\Provider::class );
+$amicable->provider( Backdrop\Template\Manager\Provider::class );
+$amicable->provider( Backdrop\View\Provider::class );
+$amicable->provider( Backdrop\Theme\Provider::class );
 
-$amicable->customize = new Amicable\Component\Customize;
+/** ------------------------------------------------------------------------------------------
+ * Register additional service providers for the theme.
+ * -------------------------------------------------------------------------------------------
+ *
+ * These are the additional providers that are crucial for the theme to operate before booting
+ * the application. These service providers offer supplementary features to the theme.
+ */
+
+/** ------------------------------------------------------------------------------------------
+ * Perform any actions.
+ * -------------------------------------------------------------------------------------------
+ *
+ * This code creates an action hook that any child themes can utilize to integrate their own
+ * bindings into the process before the app is booted. The action callback receives the
+ * application instance as a parameter.
+ */
+
+do_action( 'amicable/bootstrap', $amicable );
+
+/** ------------------------------------------------------------------------------------------
+ * Boot the application.
+ * -------------------------------------------------------------------------------------------
+ *
+ * The code invokes the `boot()` method of the application, which initiates the launch of the
+ * application. Congratulations on a job well done!
+ */
+
+$amicable->boot();

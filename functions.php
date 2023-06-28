@@ -1,26 +1,36 @@
 <?php
 /**
- * Amicable ( functions.php )
+ * Default functions template
  *
- * This (functions.php) template file should only do two jobs, one is to check the compatibility if the site meets
- * the miminum requirements before the theme proceeds to activate. The second job is to autoload the backdrop core
- * famework.
+ * This file is used to bootstrap the theme.
  *
- * @package     amicable
- * @copyright   Copyright (C) 2020. Benjamin Lu
- * @license     GNU General Public License v2 or later ( https://www.gnu.org/licenses/gpl-2.0.html )
- * @author      Benjamin Lu ( https://benjlu.com )
+ * @package   Amicable
+ * @author    Benjamin Lu <benlumia007@gmail.com>
+ * @copyright 2023. Benjamin Lu
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html
+ * @link      https://luthemes.com/portfolio/amicable
  */
 
-/**
- * Table of Content
- *
- * 1.0 - Backdrop Core
+/** ------------------------------------------------------------------------------------------
+ * Bootstrap the theme.
+ * -------------------------------------------------------------------------------------------
+ * Load the bootstrap files. Note that autoload should happen first so that any classes or
+ * functions are available that we might need.
  */
 
-/**
- * 1.0 - Backdrop Core
- */
-if ( file_exists( get_parent_theme_file_path( '/vendor/autoload.php' ) ) ) {
-	require_once get_parent_theme_file_path( '/vendor/autoload.php' );
+require_once get_parent_theme_file_path( 'app/bootstrap-autoload.php' );
+require_once get_parent_theme_file_path( 'app/framework.php' );
+
+# ------------------------------------------------------------------------------
+# Compatibility check.
+# ------------------------------------------------------------------------------
+#
+# Check that the site meets the minimum requirements for the theme before
+# proceeding if this is a theme for public release. If building for a client
+# that meets these requirements, this code is unnecessary.
+
+if ( version_compare( '1.5.3', '1.5.0', '<' ) || version_compare( PHP_VERSION, '7.1', '<' ) ) {
+
+	require_once( get_parent_theme_file_path( 'app/bootstrap-compat.php' ) );
+	return;
 }

@@ -10,12 +10,12 @@
 ?>
 
 <?php get_header(); ?>
-	<section id="content" class="site-content">
-		<div id="global-layout" class="<?php echo esc_attr( get_theme_mod( 'global_layout', 'left-sidebar' ) ); ?>">
-			<main id="main" class="content-area">
-				<?php Benlumia007\Backdrop\Template\get_template_part( 'content/content', '404' ); ?>
-			</main>
-			<?php Benlumia007\Backdrop\View\display( 'sidebar', [ 'primary' ] ); ?>
-		</div>
-	</section>
+<section id="content" class="site-content">
+	<div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'left-sidebar')); ?>">
+		<main id="main" class="content-area">
+			<?php Backdrop\Template\get_template_part('content/content', '404'); ?>
+		</main>
+		<?php Backdrop\View\display('sidebar', ['primary']); ?>
+	</div>
+</section>
 <?php get_footer(); ?>

@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "backdrop-dev/customize",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/backdrop-dev/customize.git",
-                "reference": "ed65efe1449411293b9e12d5738a33bd3009eb07"
+                "reference": "708578e0a1deae6697b49444f9fc9eb313ec2586"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/backdrop-dev/customize/zipball/ed65efe1449411293b9e12d5738a33bd3009eb07",
-                "reference": "ed65efe1449411293b9e12d5738a33bd3009eb07",
+                "url": "https://api.github.com/repos/backdrop-dev/customize/zipball/708578e0a1deae6697b49444f9fc9eb313ec2586",
+                "reference": "708578e0a1deae6697b49444f9fc9eb313ec2586",
                 "shasum": ""
             },
             "require": {
@@ -50,9 +50,9 @@
             ],
             "support": {
                 "issues": "https://github.com/backdrop-dev/customize/issues",
-                "source": "https://github.com/backdrop-dev/customize/tree/v1.0.0"
+                "source": "https://github.com/backdrop-dev/customize/tree/v1.0.1"
             },
-            "time": "2023-06-11T16:18:31+00:00"
+            "time": "2023-07-19T16:50:40+00:00"
         },
         {
             "name": "backdrop-dev/fonts",
@@ -355,16 +355,16 @@
         },
         {
             "name": "backdrop-dev/theme",
-            "version": "v1.0.0",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/backdrop-dev/theme.git",
-                "reference": "46edbe5a67f8d1b91891b97c878e30bf32ff1231"
+                "reference": "fb253819be1b8f38de2194c087702a39dabe3b31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/backdrop-dev/theme/zipball/46edbe5a67f8d1b91891b97c878e30bf32ff1231",
-                "reference": "46edbe5a67f8d1b91891b97c878e30bf32ff1231",
+                "url": "https://api.github.com/repos/backdrop-dev/theme/zipball/fb253819be1b8f38de2194c087702a39dabe3b31",
+                "reference": "fb253819be1b8f38de2194c087702a39dabe3b31",
                 "shasum": ""
             },
             "require": {
@@ -374,10 +374,7 @@
             "type": "library",
             "autoload": {
                 "files": [
-                    "src/Entry/functions-entry.php",
-                    "src/Site/functions-site.php",
-                    "src/functions-filters.php",
-                    "src/functions-helpers.php"
+                    "src/bootstrap-theme.php"
                 ],
                 "psr-4": {
                     "Backdrop\\Theme\\": "src/"
@@ -403,9 +400,9 @@
             ],
             "support": {
                 "issues": "https://github.com/backdrop-dev/theme/issues",
-                "source": "https://github.com/backdrop-dev/theme/tree/v1.0.0"
+                "source": "https://github.com/backdrop-dev/theme/tree/v1.0.3"
             },
-            "time": "2023-06-11T17:45:59+00:00"
+            "time": "2023-07-27T20:57:26+00:00"
         },
         {
             "name": "backdrop-dev/tools",
@@ -1010,5 +1007,5 @@
         "php": ">=7.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }

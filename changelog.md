@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.4 - 11.14.2024
+### Enchancement
+- Make sure that we support PHP 8.2 or higher
+
 ## 0.1.3 - 10.03.2024
 
 ### Added

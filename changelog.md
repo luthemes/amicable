@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.6 - 12.16.2024
+### Enhancement
+- Fixed margin for footer credit
+
 ## 0.1.5 - 11.18.2024
 ### Ehancement
 - Update Backdrop framework

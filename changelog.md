@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.7 - 12.30.2024
+### Bug
+- Fixed current menu color
+
 ## 0.1.6 - 12.16.2024
 ### Enhancement
 - Fixed margin for footer credit

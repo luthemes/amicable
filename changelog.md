@@ -1,6 +1,12 @@
 # Change Log
 
+## 0.1.8 - 12.31.2024
+
+### Ehancement
+- CSS for Archive pages
+
 ## 0.1.7 - 12.30.2024
+
 ### Bug
 - Fixed current menu color
 

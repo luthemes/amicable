@@ -12,7 +12,7 @@
 				</div>
 			<?php endif ?>
 			<div class="loop">
-				<ul class="grid-items grid-col-3">
+				<ul class="grid-items grid-col-3 alignwide">
 					<?php while( have_posts() ) : the_post(); ?>
 						<?php Backdrop\View\display( 'entry/archive' ); ?>
 					<?php endwhile; ?>

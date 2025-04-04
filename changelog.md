@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.0 - 04.03.2025
+### Enhancement
+* Update Archive
+
 ## 0.1.9 - 02.24.2025
 ### Enhancement
 - Restyle Archive

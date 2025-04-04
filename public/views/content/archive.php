@@ -11,14 +11,11 @@
 					<?php endif ?>
 				</div>
 			<?php endif ?>
-			<div class="loop">
-				<ul class="grid-items grid-col-3 alignwide">
-					<?php while( have_posts() ) : the_post(); ?>
-						<?php Backdrop\View\display( 'entry/archive' ); ?>
-					<?php endwhile; ?>
-				</ul>
-				<?php the_posts_pagination(); ?>
-			</div>
+			<?php $data = (object) [ 'current_year'  => '', 'current_month' => '', 'current_day'   => '' ]; ?>
+			<?php while( have_posts() ) : the_post(); ?>
+				<?php Backdrop\View\display( 'entry/archive', '', [ 'data' => $data ] ); ?>
+			<?php endwhile; ?>
+				<?php Backdrop\View\display( 'nav/pagination', 'posts' ); ?>
 		<?php endif; ?>
 	</main>
 </section>

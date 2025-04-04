@@ -1,17 +1,21 @@
+
 .archive {
+    
+    .archive-header {
+        margin: 0 auto;
+        max-width: 640px;
+    }
 
-    .site-container {
+    .post {
+        margin: 0 auto;
+        max-width: 640px;
 
-        .site-content {
-            margin: 0 auto;
-            max-width: 640px;
+        ul {
+            list-style-type: none;
+            margin: 0; 
+            padding: 0;
 
-            .content-area {
 
-                .loop {
-                    margin-top: 1.125rem;
-                }
-            }
         }
     }
 }

@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.1 - 04.09.2025
+### Bug
+* fixed featured image
+
 ## 0.2.0 - 04.03.2025
 ### Enhancement
 * Update Archive

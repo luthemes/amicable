@@ -112,12 +112,6 @@ class Component implements Bootable {
 		$manager->get_section( 'title_tagline' )->title = esc_html__( 'Branding', 'amicable' );
 		$manager->get_section( 'static_front_page' )->panel = 'theme_content';
 
-		$manager->add_section( 'theme_global_layout', [
-			'panel' => 'theme_global',
-			'title' => __( 'Layout', 'amicable' ),
-			'priority' => 5
-		] );
-
 		$manager->add_section( 'theme_content_feature_image', [
 			'panel' => 'theme_content',
 			'title' => 'Feature Image',

@@ -34,8 +34,7 @@ class Provider extends ServiceProvider {
 
 			return new Component( [
                 FeatureImage\Customize::class,
-                Footer\Customize::class,
-				Layout\Customize::class
+                Footer\Customize::class
 			] );
 		} );
     }

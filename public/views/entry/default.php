@@ -7,11 +7,12 @@
 	</header>
 	<?php if ( has_post_thumbnail() ) { ?>
 		<picture class="post-thumbnail">
-			<?php
-				$size = get_theme_mod( 'theme_content_feature_image', 'amicable-landscape-medium' ) ? get_theme_mod( 'theme_content_feature_image' ) : Mod::fallback( 'featured_image_size' );
-				the_post_thumbnail( $size );
-			?>
-		</picture>
+		<?php
+			$size = get_theme_mod( 'theme_content_feature_image' );
+			$size = ! empty( $size ) ? $size : ( Amicable\Tools\Mod::fallback( 'featured_image_size' ) ?: 'inheritance-landscape-medium' );
+			the_post_thumbnail( $size );
+		?>			
+	</picture>
 	<?php } ?>
 	<div class="entry-content">
 		<?php the_excerpt(); ?>

@@ -13,6 +13,13 @@
 
  return [
 
+	// Landscape sizes.
+	'post-thumbnail' => [
+		'label'            => __( 'Landscape: Thumbnail', 'amicable' ),
+		'width'            => 178,
+		'height'           => 100,
+		'is_featured_size' => false
+	],
 	'amicable-landscape-medium' => [
 		'label'  => __( 'Landscape: Medium', 'amicable' ),
 		'width'  => 640,
@@ -28,4 +35,30 @@
 		'width'  => 1366,
 		'height' => 768
 	],
+
+	// Portrait Sizes.
+	'amicable-portrait-small' => [
+		'label'  => __( 'Portrait: Small', 'amicable' ),
+		'width'  => 320,
+		'height' => 426
+	],
+
+	'amicable-portrait-medium' => [
+		'label'  => __( 'Portrait: Medium', 'amicable' ),
+		'width'  => 640,
+		'height' => 853
+	],
+
+	// Square Sizes.
+	'amicable-square-small' => [
+		'label'  => __( 'Square: Small', 'amicable' ),
+		'width'  => 320,
+		'height' => 320
+	],
+
+	'amicable-square-medium' => [
+		'label'  => __( 'Square: Medium', 'amicable' ),
+		'width'  => 640,
+		'height' => 640
+	]
 ];

@@ -7,24 +7,39 @@ if ( post_password_required() ) {
 <?php if ( comments_open() ) { ?>
 	<section id="comments-area" class="comments-area">
 		<?php if ( have_comments() ) { ?>
-			<h2 class="comments-title">
-				<?php $count = get_comments_number(); ?>
-				<?php
-				if ( '1' === $count ) {
-					printf( esc_html_x( 'One Comment', 'comments title', 'amicable' ) );
-				} else {
-					// Translators: 1 = counts.
-					printf( _nx( '%1$s Comment', '%1$s Comments', absint( $count ), 'comments title', 'amicable' ), absint( number_format_i18n( $count ) ) ); // phpcs:ignore
-				}
+			<h3 class="comments-title">
+				<?php 
+					$count = get_comments_number(); 
+					$title = get_the_title();
 				?>
-			</h2>
+				<?php
+					if ( 1 === absint( $count ) ) {
+							printf(
+								esc_html__( 'One thought on “%s”', 'amicable' ),
+								esc_html( $title )
+							);
+						} else {
+							printf(
+								_nx(
+									'%1$s thought on “%2$s”',
+									'%1$s thoughts on “%2$s”',
+									$count,
+									'comments title',
+									'amicable'
+								),
+								absint( number_format_i18n( $count ) ),
+								esc_html( $title )
+							);
+						}
+				?>
+			</h3>
 		<?php } ?>
 		<ol class="comment-list">
 			<?php
 			wp_list_comments( [
 				'avatar_size' => 60,
 				'callback'    => function( $comment, $args, $depth ) {
-					Backdrop\View\display( 'comment', Backdrop\Theme\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
+					Backdrop\View\display( 'comment', Backdrop\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
 				}
 			] );
 			?>

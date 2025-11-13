@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.2 - 11.13.2025
+### Enhancement
+* Moved from Laravel-Mix to Vite for assets
+* Update CSS to use BEM
+
+### Bug
+* Fixed Permalink for certain titles
+
 ## 0.2.1 - 04.09.2025
 ### Bug
 * fixed featured image

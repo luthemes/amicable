@@ -17,8 +17,7 @@
  * via the `Backdrop\app()`function or the `Backdrop\App` static class after the application has
  * been booted.
  */
-
-$theme = Backdrop\booted() ? Backdrop\app() : new Backdrop\Core\Application();
+$theme = new Backdrop\Core\Application();
 
 /** ------------------------------------------------------------------------------------------
  * Register default service providers with the application.
@@ -28,13 +27,6 @@ $theme = Backdrop\booted() ? Backdrop\app() : new Backdrop\Core\Application();
  * booting the application. These service providers form the foundation for the theme.
  */
 $theme->provider( Backdrop\Fonts\Provider::class );
-$theme->provider( Backdrop\Languages\Provider::class );
-$theme->provider( Backdrop\Mix\Provider::class );
-$theme->provider( Backdrop\Pagination\Provider::class );
-$theme->provider( Backdrop\Template\Hierarchy\Provider::class );
-$theme->provider( Backdrop\Template\Manager\Provider::class );
-$theme->provider( Backdrop\Theme\Provider::class );
-$theme->provider( Backdrop\View\Provider::class );
 
 /** ------------------------------------------------------------------------------------------
  * Register additional service providers for the theme.
@@ -44,9 +36,7 @@ $theme->provider( Backdrop\View\Provider::class );
  * the application. These service providers offer supplementary features to the theme.
  */
 $theme->provider( Amicable\Provider::class );
-$theme->provider( Amicable\CleanCP\Provider::class );
-$theme->provider( Amicable\Customize\Provider::class );
-$theme->provider( Amicable\Settings\Provider::class );
+$theme->provider( Amicable\Vite\Provider::class );
 
 /** ------------------------------------------------------------------------------------------
  * Perform any actions.

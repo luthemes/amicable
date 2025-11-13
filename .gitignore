@@ -1,6 +1,3 @@
 node_modules
-public/css
-public/js
-vendor
-
-public/mix-manifest.json
+public/assets
+vendor 

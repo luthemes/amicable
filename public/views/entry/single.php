@@ -1,9 +1,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<div class="entry-metadata">
-			<?php Backdrop\Theme\Entry\display_date(); ?>
+			<?php Backdrop\Post\display_date(); ?>
 		</div>
-		<?php Backdrop\Theme\Entry\display_title(); ?>
+		<?php Backdrop\Post\display_title(); ?>
 	</header>
 	<?php if ( has_post_thumbnail() ) { ?>
 		<picture class="post-thumbnail">
@@ -19,12 +19,12 @@
 		<?php Backdrop\View\display( 'nav/pagination', 'post' ); ?>
 	</div>
 	<footer class="entry-footer">
-	<?php Backdrop\Theme\Entry\display_terms( [
+	<?php Backdrop\Post\display_terms( [
 			// Translators: %s is the category list.
 			'text'     => __( 'Topics: %s', 'amicable' ),
 			'taxonomy' => 'category'
 		] ) ?>
-		<?php Backdrop\Theme\Entry\display_terms( [
+		<?php Backdrop\Post\display_terms( [
 			// Translators: %s is the post tags list.
 			'text'     => __( 'Tagged %s', 'amicable' ),
 			'taxonomy' => 'post_tag'

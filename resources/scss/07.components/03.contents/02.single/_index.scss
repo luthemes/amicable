@@ -1,7 +1,10 @@
+
+@use '../01.defaults/../../../01.settings/fonts' as fonts;
+
 .content-area {
 	line-height: 2rem;
     
-	.post {
+	.entry {
 
 		margin-top: 3rem;
 
@@ -14,7 +17,7 @@
 			margin-right: auto;
 			max-width: 640px;
 
-            .entry-title {
+            .entry__title {
                 color: #000000;
 				margin: 0;
 
@@ -30,7 +33,7 @@
 
             .entry-metadata {
                 color: #959595;
-				font-family: font-family( 'date' );
+				font-family: fonts.font-family( 'date' );
 				font-size: 1.625rem;
 
                 .fa-user {

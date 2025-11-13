@@ -14,7 +14,7 @@
  */
 namespace Amicable;
 
-use function Backdrop\Mix\asset;
+use function Amicable\Vite\asset;
 
 /**
  * Enqueue Scripts and Styles
@@ -29,13 +29,13 @@ use function Backdrop\Mix\asset;
 add_action( 'wp_enqueue_scripts', function() {
 
 	// Rather than enqueue the main style.css stylesheet, we are going to enqueue screen.css.
-	wp_enqueue_style( 'amicable-screen', asset( 'css/screen.css' ), null, null );
+	wp_enqueue_style( 'amicable-screen', asset( 'resources/scss/screen.scss' ), null, null );
 
 	// Enqueue theme scripts
-	wp_enqueue_script( 'amicable-app', asset( 'js/app.js' ), [ 'jquery' ], null, true );
+	wp_enqueue_script( 'amicable-app', asset( 'resources/js/app.js' ), [ 'jquery' ], null, true );
 
 	// Enqueue Navigation.
-	wp_enqueue_script( 'amicable-navigation', asset( 'js/navigation.js' ), null, null, true );
+	wp_enqueue_script( 'amicable-navigation', asset( 'resources/js/navigation.js' ), null, null, true );
 	wp_localize_script( 'amicable-navigation', 'amicableScreenReaderText', [
 		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'amicable' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'amicable' ) . '</span>',

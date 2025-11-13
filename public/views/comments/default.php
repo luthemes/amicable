@@ -8,18 +8,34 @@ if ( post_password_required() ) {
 	<section id="comments-area" class="comments-area">
 		<?php if ( have_comments() ) { ?>
 			<h3 class="comments-title">
-				<?php 
-					$count = get_comments_number(); 
-					$title = get_the_title();
-				?>
 				<?php
-					if ( 1 === absint( $count ) ) {
-							printf(
-								esc_html__( 'One thought on “%s”', 'amicable' ),
-								esc_html( $title )
-							);
-						} else {
-							printf(
+				$count      = get_comments_number();
+				$post_title = get_the_title();
+				?>
+
+				<?php if ( 1 === absint( $count ) ) { ?>
+
+					<?php
+					printf(
+						'%s',
+						esc_html(
+							sprintf(
+								/* translators: %s: Post title */
+								__( 'One thought on “%s”', 'amicable' ),
+								$post_title
+							)
+						)
+					);
+					?>
+
+				<?php } else { ?>
+
+					<?php
+					printf(
+						'%s',
+						esc_html(
+							sprintf(
+								/* translators: 1: Comment count, 2: Post title */
 								_nx(
 									'%1$s thought on “%2$s”',
 									'%1$s thoughts on “%2$s”',
@@ -27,13 +43,18 @@ if ( post_password_required() ) {
 									'comments title',
 									'amicable'
 								),
-								absint( number_format_i18n( $count ) ),
-								esc_html( $title )
-							);
-						}
-				?>
+								number_format_i18n( $count ),
+								$post_title
+							)
+						)
+					);
+					?>
+
+				<?php } ?>
+
 			</h3>
 		<?php } ?>
+
 		<ol class="comment-list">
 			<?php
 			wp_list_comments( [
@@ -44,12 +65,18 @@ if ( post_password_required() ) {
 			] );
 			?>
 		</ol>
+
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
 			<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-				<div class="comment-previous"><?php previous_comments_link( '<i class="fa fa-arrow-circle-o-left"></i> ' . esc_html__( 'Older Comments', 'amicable' ) ); ?></div>
-				<div class="comment-next"><?php next_comments_link( '<i class="fa fa-arrow-circle-o-right"></i> ' . esc_html__( 'Newer Comments', 'amicable' ) ); ?></div>
+				<div class="comment-previous">
+					<?php previous_comments_link( '<i class="fa fa-arrow-circle-o-left"></i> ' . esc_html__( 'Older Comments', 'amicable' ) ); ?>
+				</div>
+				<div class="comment-next">
+					<?php next_comments_link( '<i class="fa fa-arrow-circle-o-right"></i> ' . esc_html__( 'Newer Comments', 'amicable' ) ); ?>
+				</div>
 			</nav>
 		<?php } ?>
+
 		<?php comment_form(); ?>
 	</section>
 <?php } ?>

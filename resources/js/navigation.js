@@ -115,11 +115,10 @@
 	function toggleFocus() {
 		var self = this;
 
-		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( -1 === self.className.indexOf( 'menu-items' ) ) {
+		// Walk upward until .menu-items OR stop if no parent.
+		while ( self && self.className && -1 === self.className.indexOf( 'menu-items' ) ) {
 
-			// On li elements toggle the class .focus.
-			if ( 'li' === self.tagName.toLowerCase() ) {
+			if ( self.tagName && 'li' === self.tagName.toLowerCase() ) {
 
 				if ( -1 !== self.className.indexOf( 'focus' ) ) {
 					self.className = self.className.replace( ' focus', '' );
@@ -127,9 +126,11 @@
 					self.className += ' focus';
 				}
 			}
+
 			self = self.parentElement;
 		}
 	}
+
 
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.

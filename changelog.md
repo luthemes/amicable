@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.2.3 - 11.17.2025
+### Bug
+* Fixed Page
+* Fixed Primary Navigation
+
 ## 0.2.2 - 11.13.2025
 ### Enhancement
 * Moved from Laravel-Mix to Vite for assets

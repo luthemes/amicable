@@ -116,7 +116,7 @@
 		var self = this;
 
 		// Walk upward until .menu-items OR stop if no parent.
-		while ( self && self.className && -1 === self.className.indexOf( 'menu-items' ) ) {
+		while ( self && self.className && -1 === self.className.indexOf( 'menu__items' ) ) {
 
 			if ( self.tagName && 'li' === self.tagName.toLowerCase() ) {
 

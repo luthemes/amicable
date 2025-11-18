@@ -11,13 +11,13 @@
 		position: fixed;
 	}
 
-	.menu-items {
+	.menu__items {
 		left: -9999rem;
 		position: absolute;
 	}
 
 	.toggled {
-		.menu-items {
+		.menu__items {
 			background: #000000;
 			display: block;
 			bottom: 3.5rem;
@@ -28,7 +28,7 @@
 			right: 1.125rem;
 			text-align: left;
 
-			.menu-item {
+			.menu__item {
 				list-style-type: none;
 				margin: 0.6rem;
 				padding: 0.6rem;
@@ -120,7 +120,7 @@
 			display: none;
 		}
 
-		.menu-items {
+		.menu__items {
 			display: flex;
 			list-style-type: none;
 			margin: 0;
@@ -128,7 +128,7 @@
 			position: static;
 			justify-content: right;
 
-			.menu-item {
+			.menu__item {
 				left: unset;
 				position: relative;
 				width: max-content;
@@ -140,7 +140,7 @@
 					text-underline-offset: 4px;
 				}
 
-				&.menu-item-has-children {
+				&.menu__item-has-children {
 					> {
 						a {
 							&:after {
@@ -156,7 +156,7 @@
 					}
 
 					.sub-menu {
-						.menu-item-has-children {
+						.menu__item-has-children {
 							a {
 								&:after {
 									display: none;
@@ -166,7 +166,7 @@
 					}
 				}
 
-				&.current-menu-item {
+				&.menu__item--current {
 					a {
 						color: #000000;
 						padding: 0.5rem 1rem;
@@ -176,7 +176,7 @@
 					}
 
 					.sub-menu {
-						.menu-item {
+						.menu__item {
 							a {
 								color: #ffffff;
 								padding: 0.5rem 1rem;
@@ -210,7 +210,7 @@
 					visibility: hidden;
 					transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
 
-					.menu-item {
+					.menu__item {
 						margin: 0 0 0.5rem 0;
 						padding: 0.5rem;
 

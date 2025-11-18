@@ -9,7 +9,7 @@ if ( has_nav_menu( $data->location ) ) { ?>
 				'theme_location' => $data->location,
 				'container'      => '',
 				'menu_id'        => 'primary-menu',
-				'menu_class'     => 'menu-items',
+				'menu_class'     => 'menu__items',
 				'depth'          => 2
 			)
 		);

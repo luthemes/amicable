@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.4 - 11.19.2025
+### Bug
+* Fixed Archive styles
+
 ## 0.2.3 - 11.17.2025
 ### Bug
 * Fixed Page

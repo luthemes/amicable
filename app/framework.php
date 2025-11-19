@@ -36,6 +36,7 @@ $theme->provider( Backdrop\Fonts\Provider::class );
  * the application. These service providers offer supplementary features to the theme.
  */
 $theme->provider( Amicable\Provider::class );
+$theme->provider( Amicable\Customize\Provider::class );
 $theme->provider( Amicable\Vite\Provider::class );
 
 /** ------------------------------------------------------------------------------------------

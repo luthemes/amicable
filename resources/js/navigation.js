@@ -39,7 +39,7 @@
 	screenreadertext.textContent = amicableScreenReaderText.expandMain;
 	button.appendChild( screenreadertext );
 
-	parentLink = container.querySelectorAll( '.menu-item-has-children, .page_item_has_children' );
+	parentLink = container.querySelectorAll( '.has-children, .menu-item-has-children, .page_item_has_children' );
 
 	for ( i = 0, len = parentLink.length; i < len; i++ ) {
 		var dropdown = document.createElement( 'button' ),
@@ -137,7 +137,7 @@
 	 */
 	( function( container ) {
 		var touchStartFn, i,
-			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
+			parentLink = container.querySelectorAll( '.has-children > a, .menu-item-has-children > a, .page_item_has_children > a' );
 
 		if ( 'ontouchstart' in window ) {
 			touchStartFn = function( e ) {

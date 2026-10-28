@@ -19,6 +19,10 @@ class Customize extends Customizable {
 	 */
 	public function registerSections( WP_Customize_Manager $manager ) {
 
+		$manager->add_section( 'theme_footer_credit', [
+			'panel' => 'theme_footer',
+			'title' => esc_html__( 'Credit', 'amicable' ),
+		] );
 	}
 
 	/**

@@ -35,10 +35,14 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_script( 'amicable-app', asset( 'resources/js/app.js' ), [ 'jquery' ], null, true );
 
 	// Enqueue Navigation.
-	wp_enqueue_script( 'amicable-navigation', asset( 'resources/js/navigation.js' ), null, null, true );
+	wp_enqueue_script( 'amicable-navigation', asset( 'resources/js/navigation.js' ), [ 'jquery' ], null, true );
+
+	// Screen reader text for the menu toggles. `navigation.js` sets these as plain text.
 	wp_localize_script( 'amicable-navigation', 'amicableScreenReaderText', [
-		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'amicable' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'amicable' ) . '</span>',
+		'expandMain'    => __( 'Open the main menu', 'amicable' ),
+		'collapseMain'  => __( 'Close the main menu', 'amicable' ),
+		'expandChild'   => __( 'expand child menu', 'amicable' ),
+		'collapseChild' => __( 'collapse child menu', 'amicable' ),
 	] );
 
 	// Loads ClassicPress' comment-reply script where appropriate.

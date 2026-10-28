@@ -15,7 +15,7 @@ namespace Amicable\Settings\Admin;
 
 use Backdrop\Contracts\Bootable;
 use Amicable\Settings\Admin\Views;
-use function Backdrop\Mix\asset;
+use function Amicable\Vite\asset;
 
 /**
  * Options page class.
@@ -184,7 +184,7 @@ class OptionsPage implements Bootable {
 	<?php }
 
 	public function admin_styles() {
-		wp_enqueue_style( 'amicable-admin-styles', asset( 'css/admin.css' ), null, null );
+		wp_enqueue_style( 'amicable-admin-styles', asset( 'resources/scss/admin.scss' ), null, null );
 	}
 
 	/**

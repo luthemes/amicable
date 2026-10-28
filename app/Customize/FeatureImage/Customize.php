@@ -19,6 +19,10 @@ class Customize extends Customizable {
 	 */
 	public function registerSections( WP_Customize_Manager $manager ) {
 
+		$manager->add_section( 'theme_content_feature_image', [
+			'panel' => 'theme_content',
+			'title' => esc_html__( 'Feature Image', 'amicable' ),
+		] );
 	}
 
 	/**
@@ -32,9 +36,12 @@ class Customize extends Customizable {
 	public function registerSettings( WP_Customize_Manager $manager ) {
 
         // Add a setting for the feature image size.
-        $manager->add_setting( 'theme_content_feature_image', array(
-        'default'   => Mod::fallback( 'featured_image_size' ),
-        ) );
+		$manager->add_setting( 'theme_content_feature_image', [
+			'default'           => Mod::fallback( 'featured_image_size' ),
+			'sanitize_callback' => function( $value ) {
+				return array_key_exists( $value, Config::get( 'image-sizes' ) ) ? $value : Mod::fallback( 'featured_image_size' );
+			},
+		] );
 	}
 
 	/**

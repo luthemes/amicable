@@ -13,11 +13,18 @@
  * Create a new application.
  * -------------------------------------------------------------------------------------------
  *
- * This code creates the one true instance of the Backdrop Core Application, which can be access
- * via the `Backdrop\app()`function or the `Backdrop\App` static class after the application has
- * been booted.
+ * This code creates the one true instance of the Backdrop Application, which can be accessed
+ * via the `Backdrop\app()` function as soon as it is created, and via the `Backdrop\App` static
+ * class after the application has been booted. If an application has already been booted, it
+ * is reused instead of creating a new one.
  */
-$theme = new Backdrop\Core\Application();
+
+// `Backdrop\booted()` was added on the framework's `develop` branch. If an older copy of the
+// framework is loaded first (for example, one bundled with a plugin), fall back to creating a
+// new application.
+$theme = function_exists( 'Backdrop\booted' ) && Backdrop\booted()
+	? Backdrop\app()
+	: new Backdrop\Core\Application();
 
 /** ------------------------------------------------------------------------------------------
  * Register default service providers with the application.

@@ -13,6 +13,7 @@ export default defineConfig({
         app: path.resolve(__dirname, 'resources/js/app.js'),
         nav: path.resolve(__dirname, 'resources/js/navigation.js'),
         screen: path.resolve(__dirname, 'resources/scss/screen.scss'),
+        admin: path.resolve(__dirname, 'resources/scss/admin.scss'),
       },
       output: {
         entryFileNames: 'js/[name]-[hash].js',

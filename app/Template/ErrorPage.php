@@ -15,8 +15,6 @@ namespace Amicable\Template;
 
 use Amicable\Settings\Options;
 
-use function Backdrop\Theme\Entry\render_title;
-
 /**
  * Error page class.
  *

@@ -1,5 +1,21 @@
 # Change Log
 
+## 0.2.5 - 10.28.2026
+### Changed
+- Updated to the `develop` branch of `backdrop-dev/framework`, and use the framework's Customize component.
+- The release workflow no longer needs the `PRIVATE_KEY` or `TOKEN` secrets; it uses GitHub's built-in token and checks that the release tag matches the `style.css` version.
+- Declares `Domain Path: /public/lang` in `style.css`.
+
+### Removed
+- Composer dev dependencies (`wptrt/wpthemereview` is abandoned and blocked `composer install`) and `composer.lock`, which pinned the framework's 1.0 branch.
+
+### Fixed
+- Submenus can be opened on small and touch screens again, the desktop submenu arrow shows, and the social menu icons are spaced again.
+- The menu toggles' screen reader text was empty.
+- Pages use the theme's own image sizes instead of loading the full-size featured image.
+- Show an admin notice instead of a fatal error when the Backdrop framework isn't installed.
+- Removed calls to framework functions that no longer exist (`Backdrop\Theme\is_classicpress`, `Backdrop\Theme\Entry\*`, `Backdrop\Mix\asset`).
+
 ## 0.2.4 - 11.19.2025
 ### Bug
 * Fixed Archive styles

@@ -12,16 +12,18 @@ Since amicable is a parent theme, you'll want to create a child theme if you pla
 
 <pre>
 /*!
- * Theme Name: amicable Child
+ * Theme Name: Amicable Child
  * Theme URI: https://link-to-your-site.com
  * Description: Describe what your theme should be like.
  * Version: 0.1
  * Author: Your Name
  * Author URI: https://link-to-your-site.com
  * Tags: Add, Whatever, Tags, You, Want
- * Template: amicable-child
+ * Template: amicable
  */
 </pre>
+
+`Template` must be the parent theme's folder name, `amicable`.
 
 From this point, you simply need to start adding your own styles. The parent theme styles will automatically be loaded for you.
 

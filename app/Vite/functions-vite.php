@@ -1,8 +1,8 @@
 <?php
 /**
- * Mix Manifest functions.
+ * Vite asset functions.
  *
- * @package   Backdrop
+ * @package   Amicable
  * @author    Benjamin Lu <benlumia007@gmail.com>
  * @copyright 2019-2023. Benjamin Lu
  * @license   https://www.gnu.org/licenses/gpl-2.0.html
@@ -55,7 +55,7 @@ function resolve_vite_asset( ?array $manifest, string $path, string $baseUrl ): 
  * Parent theme asset loader (Vite).
  */
 function asset( string $path ): string {
-	$manifest = App::resolve( 'inheritance/vite/parent' );
+	$manifest = App::resolve( 'amicable/vite/parent' );
 
 	$baseUrl  = get_template_directory_uri();
 	return resolve_vite_asset( $manifest, $path, $baseUrl );

@@ -16,10 +16,7 @@
 	"autoload": {
 		"psr-4": {
 			"Amicable\\": "app"
-		},
-		"files": [
-			"app/Vite/functions-vite.php"
-		]
+		}
 	},
 	"require": {
 		"php": ">=7.4",

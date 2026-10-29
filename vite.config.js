@@ -14,6 +14,7 @@ export default defineConfig({
         nav: path.resolve(__dirname, 'resources/js/navigation.js'),
         screen: path.resolve(__dirname, 'resources/scss/screen.scss'),
         admin: path.resolve(__dirname, 'resources/scss/admin.scss'),
+        'customize-controls': path.resolve(__dirname, 'resources/js/customize-controls.js'),
       },
       output: {
         entryFileNames: 'js/[name]-[hash].js',

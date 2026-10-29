@@ -51,6 +51,21 @@ add_action( 'wp_enqueue_scripts', function() {
 	}
 } );
 
+/**
+ * Enqueue the customizer controls script, which hides controls whose active callback is
+ * false (see `resources/js/customize-controls.js`).
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+add_action( 'customize_controls_enqueue_scripts', function() {
+
+	wp_enqueue_script( 'amicable-customize-controls', asset( 'resources/js/customize-controls.js' ), [ 'customize-controls' ], null, true );
+
+	wp_add_inline_style( 'customize-controls', 'li.customize-control.amicable-control-inactive { display: none !important; }' );
+} );
+
 add_action( 'wp_enqueue_scripts', function() {
 	$global_layout = get_theme_mod( 'theme_global_layout', 'full' );
 

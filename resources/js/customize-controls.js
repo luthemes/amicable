@@ -1,25 +1,26 @@
-/**
- * Layouts preview.
+/*
+ * Hide controls whose active callback is false.
  *
- * This file handles the JavaScript for the live preview of the layouts feature
- * in the customizer.
- *
- * @package   Exhale
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- * @link      https://themehybrid.com/themes/exhale
+ * The customizer applies a control's starting active state before the control is in
+ * the page, and its display:none doesn't stick, so a control that is inactive when
+ * the customizer loads stays visible until its state changes. That left Custom Footer
+ * Text showing while the "powered by" credit was on. Mark inactive controls with a
+ * class, which the styles added in functions-assets.php hide, and keep it in step
+ * with the active state. Controls that core shows or hides for other reasons are
+ * left alone.
  */
+wp.customize.bind( 'ready', function() {
+	var watch = function( control ) {
+		var sync = function( active ) {
+			control.container.toggleClass( 'amicable-control-inactive', ! active );
+		};
 
-(function($) {
-    wp.customize('theme_global_layout', function(value) {
-        value.bind(function(newval) {
-			console.log( newval );
-            if (newval === 'full') {
-                $('body').removeClass('boxed-width').addClass('full-width');
-            } else if (newval === 'wide') {
-                $('body').removeClass('full-width').addClass('boxed-width');
-            }
-        });
-    });
-})(jQuery);
+		sync( control.active() );
+		control.active.bind( sync );
+	};
+
+	wp.customize.control.each( watch );
+
+	// Controls added later, such as widgets and menu items.
+	wp.customize.control.bind( 'add', watch );
+} );

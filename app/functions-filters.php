@@ -76,3 +76,22 @@ add_filter( 'walker_nav_menu_start_el', function( $item_output, $item, $depth, $
 	return $item_output;
 
 }, 10, 4 );
+
+/**
+ * Restores the core emoji styles while the emoji script is loaded.
+ *
+ * The Backdrop framework removes the core emoji styles, which size the emoji images
+ * that the emoji script swaps in on browsers without native emoji. The script still
+ * loads, so put the styles back while it does. Runs on `wp_head`, after anything that
+ * removes the script.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+add_action( 'wp_head', function() {
+
+	if ( has_action( 'wp_head', 'print_emoji_detection_script' ) && ! has_action( 'wp_print_styles', 'print_emoji_styles' ) ) {
+		print_emoji_styles();
+	}
+}, 8 );

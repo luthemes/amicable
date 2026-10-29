@@ -1,5 +1,22 @@
 # Change Log
 
+## 0.2.6 - 10.28.2026
+### Fixed
+- Every page fataled with "Call to undefined function Amicable\Vite\asset()" when `vendor/` was installed before 0.2.5. The Vite helper is now loaded by the theme instead of Composer's autoloader.
+- Custom Footer Text showed in the customizer while the "powered by" credit was on. Customizer controls that don't apply are now hidden when the customizer opens.
+- Every page printed the charset and viewport meta tags twice.
+- Emoji images were unstyled on browsers without native emoji, because the framework removes the core emoji styles while the emoji script still loads.
+
+### Security
+- Updated the build tools: Vite 7.3.7, Rollup 4.66.0 (CVE-2026-27606 was fixed in 4.59) and Immutable 5.1.9 (CVE-2026-29063 was fixed in 5.1.5), with `overrides` keeping Rollup and Immutable at patched versions. `npm audit` finds no vulnerabilities.
+- The release workflow stops if `npm audit` finds a high or critical vulnerability.
+
+### Changed
+- `backdrop-dev/framework` and `backdrop-dev/fonts` are pinned to the commits this release was tested with, and `composer.lock` is ignored.
+- `style.css` requires PHP 7.4, matching `composer.json` (it said 8.0), and WordPress 5.9 or later (ClassicPress 2.0 or later).
+- Added a translation template, `public/lang/amicable.pot`, and translator comments for the strings with placeholders.
+- The child theme instructions in `readme.md` use `Template: amicable`.
+
 ## 0.2.5 - 10.28.2026
 ### Changed
 - Updated to the `develop` branch of `backdrop-dev/framework`, and use the framework's Customize component.

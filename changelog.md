@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.7 - 11.02.2026
+### Added
+- The translation template, `public/lang/amicable.pot`, now includes the strings that come from the Backdrop framework, such as the pagination's Previous and Next, "Search results for: %s", "Archives" and the customizer's Theme: panels. The framework translates them through the theme's own text domain, so they are translated along with the rest of the theme; until now they were missing from the template, so they stayed in English.
+
 ## 0.2.6 - 10.28.2026
 ### Fixed
 - Every page fataled with "Call to undefined function Amicable\Vite\asset()" when `vendor/` was installed before 0.2.5. The Vite helper is now loaded by the theme instead of Composer's autoloader.

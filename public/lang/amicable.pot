@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Amicable 0.2.7\n"
+"Project-Id-Version: Amicable 0.2.8\n"
 "Report-Msgid-Bugs-To: https://github.com/luthemes/amicable/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-02T18:48:06+00:00\n"
+"POT-Creation-Date: 2026-11-25T05:00:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: amicable\n"
@@ -199,6 +199,22 @@ msgstr ""
 #: app/framework-missing.php:27
 #, php-format
 msgid "The Amicable theme can't find the Backdrop framework. Run %1$s in the %2$s folder, or upload a copy of the theme that includes its vendor folder."
+msgstr ""
+
+#: app/functions-assets.php:40
+msgid "Copy"
+msgstr ""
+
+#: app/functions-assets.php:41
+msgid "Copied"
+msgstr ""
+
+#: app/functions-assets.php:42
+msgid "Copy failed"
+msgstr ""
+
+#: app/functions-assets.php:43
+msgid "Copy code"
 msgstr ""
 
 #: app/functions-assets.php:42

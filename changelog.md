@@ -1,5 +1,22 @@
 # Change Log
 
+## 0.2.8 - 11.24.2026
+
+### Changed
+- The theme is built on the Backdrop framework 2.0 stable packages instead of pinned development commits: framework, view, tools, template helpers, template hierarchy, template manager, theme, pagination, fonts and customize are required as released versions, and the template tags use the new package namespaces.
+- The social menu uses the `backdrop-dev/icons` package instead of the theme's bundled SVGs; the icons the package provides are removed from the theme.
+
+### Added
+- Blockquotes, tables, definition lists and horizontal rules have theme styles.
+- `<pre>` blocks have a copy button that shows an icon and flips to a checkmark when copied.
+
+### Fixed
+- Every page fataled with "Call to undefined function Backdrop\is_classicpress()" on the 2.0 packages. The theme now calls the renamed function.
+- The navigation menu and social icons are restored: the menu renders as a horizontal row with working hover drop-downs again, and the five footer icons are visible.
+- Entries carry the `entry` class again, so the content column is 640px wide and sticky posts show in a card.
+- The site title and entry titles use the theme's styles again.
+- Captioned images no longer overflow the content column, and floated images no longer overlap the comment form.
+
 ## 0.2.7 - 11.02.2026
 ### Added
 - The translation template, `public/lang/amicable.pot`, now includes the strings that come from the Backdrop framework, such as the pagination's Previous and Next, "Search results for: %s", "Archives" and the customizer's Theme: panels. The framework translates them through the theme's own text domain, so they are translated along with the rest of the theme; until now they were missing from the template, so they stayed in English.

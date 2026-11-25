@@ -22,7 +22,7 @@
 	<header id="masthead" class="site-header">
 		<div class="site-header__container">
 			<div class="site-header__branding">
-				<?php Backdrop\Site\display_title(); ?>
+				<?php Backdrop\Theme\Site\display_site_title(); ?>
 				<?php
 					$tagline = get_bloginfo( 'description' );
 
@@ -31,7 +31,7 @@
 							<span class="site-header__sep" aria-hidden="true"><?php echo esc_html( $sep ) ?></span>
 						<?php endif;
 
-						Backdrop\Site\display_description();
+						Backdrop\Theme\Site\display_site_description();
 					}
 				?>
 			</div>

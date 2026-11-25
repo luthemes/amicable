@@ -6,7 +6,7 @@
 		</picture>
 	<?php } ?>
 	<header class="entry-header">
-		<?php Backdrop\Post\display_title(); ?>
+		<?php Backdrop\Theme\Entry\display_title(); ?>
 	</header>
 	<div class="entry-content">
 		<?php the_content(); ?>

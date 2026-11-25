@@ -30,8 +30,16 @@ blockquote cite {
 	margin-top: 0.5em;
 }
 
-blockquote cite::before {
+blockquote cite::before,
+blockquote + p cite::before {
 	content: "\2014\00a0";
+}
+
+/* The attribution for a quote is sometimes a paragraph of its own after the
+   blockquote, starting with the cite, rather than a cite inside the quote. */
+blockquote + p cite {
+	font-size: 0.875em;
+	font-style: normal;
 }
 
 table {

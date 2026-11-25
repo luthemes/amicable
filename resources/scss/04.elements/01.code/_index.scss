@@ -31,3 +31,22 @@ code {
 	background : rgba( 214, 224, 231, 0.25 );
 	border-radius: 3px;
 }
+
+/* The Copy button that `resources/js/app.js` adds to `pre` blocks. */
+.code-copy {
+	background: #ffffff;
+	border: 1px solid #d6e0e7;
+	border-radius: 3px;
+	color: #677d89;
+	cursor: pointer;
+	/* Stuck to the top-right corner while the code scrolls underneath:
+	   `absolute` scrolled away with it. The script puts the button first in
+	   the block, so it floats at the top. */
+	float: right;
+	font-family: font-family( 'heading' );
+	font-size: 0.75rem;
+	padding: 0.25em 0.5em;
+	position: sticky;
+	right: 0.5rem;
+	top: 0.5rem;
+}

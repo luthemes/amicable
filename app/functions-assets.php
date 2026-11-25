@@ -14,6 +14,7 @@
  */
 namespace Amicable;
 
+use Amicable\Tools\Svg;
 use function Amicable\Vite\asset;
 
 /**
@@ -33,6 +34,18 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	// Enqueue theme scripts
 	wp_enqueue_script( 'amicable-app', asset( 'resources/js/app.js' ), [ 'jquery' ], null, true );
+
+	// Labels for the Copy buttons `app.js` adds to `pre` blocks.
+	wp_localize_script( 'amicable-app', 'amicableCodeCopy', [
+		'copy'       => __( 'Copy', 'amicable' ),
+		'copied'     => __( 'Copied', 'amicable' ),
+		'copyFailed' => __( 'Copy failed', 'amicable' ),
+		'copyCode'   => __( 'Copy code', 'amicable' ),
+		// The button shows an icon, not text: Iconoir copy / check / xmark.
+		'copyIcon'   => Svg::render( 'copy' ),
+		'copiedIcon' => Svg::render( 'check' ),
+		'failedIcon' => Svg::render( 'xmark' ),
+	] );
 
 	// Enqueue Navigation.
 	wp_enqueue_script( 'amicable-navigation', asset( 'resources/js/navigation.js' ), [ 'jquery' ], null, true );

@@ -1,3 +1,5 @@
+@use '../../01.settings/fonts' as fonts;
+
 pre {
     overflow      : auto;
     word-wrap     : normal;
@@ -5,10 +7,10 @@ pre {
     box-sizing    : content-box;
     padding: 1.125rem;
     line-height: 1.75;
-    text-shadow: 0 1px #e9f3f8;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 1px 1px 10px #e9f3f8;
+    background: rgba( 214, 224, 231, 0.25 );
+    border: 1px solid #d6e0e7;
+    border-left: 4px solid #0369a1;
     border-radius: 5px;
-    border-left: 6px solid #e9f3f8;
 }
 
 pre {
@@ -24,10 +26,40 @@ pre {
 
 code {
 	padding    : 0.125em 0.25em;
-	font-family: font-family( 'code' );
+	font-family: fonts.font-family( 'code' );
     	font-size  : 0.789em; // ~15px
 	font-style:  normal;
 	color:       inherit;
 	background : rgba( 214, 224, 231, 0.25 );
 	border-radius: 3px;
+}
+
+/* The Copy button that `resources/js/app.js` adds to `pre` blocks. */
+.code-copy {
+	background: #ffffff;
+	border: 1px solid #d6e0e7;
+	border-radius: 3px;
+	color: #677d89;
+	cursor: pointer;
+	/* Stuck to the top-right corner while the code scrolls underneath:
+	   `absolute` scrolled away with it. The script puts the button first in
+	   the block, so it floats at the top. */
+	float: right;
+	font-family: fonts.font-family( 'heading' );
+	font-size: 0.75rem;
+	line-height: 1;
+	padding: 0.25em 0.5em;
+	position: sticky;
+	right: 0.5rem;
+	top: 0.5rem;
+}
+
+.code-copy:hover {
+	background: #e9f3f8;
+}
+
+.code-copy svg {
+	display: block;
+	height: 14px;
+	width: 14px;
 }

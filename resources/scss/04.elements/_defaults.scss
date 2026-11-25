@@ -11,3 +11,76 @@ a {
 	text-decoration: underline;
 	text-decoration-thickness: 2px; /* Adjust the value as needed */
 }
+
+blockquote {
+	border-left: 4px solid #0369a1;
+	font-style: italic;
+	margin: 1em 0;
+	padding: 0 0 0 1.25em;
+}
+
+blockquote blockquote {
+	border-left-color: #e9f3f8;
+}
+
+blockquote cite {
+	display: block;
+	font-size: 0.875em;
+	font-style: normal;
+	margin-top: 0.5em;
+}
+
+blockquote cite::before,
+blockquote + p cite::before {
+	content: "\2014\00a0";
+}
+
+/* The attribution for a quote is sometimes a paragraph of its own after the
+   blockquote, starting with the cite, rather than a cite inside the quote. */
+blockquote + p cite {
+	font-size: 0.875em;
+	font-style: normal;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 1em 0;
+	width: 100%;
+}
+
+caption {
+	caption-side: top;
+	font-weight: bold;
+	padding-bottom: 0.5em;
+	text-align: left;
+}
+
+th,
+td {
+	border-bottom: 1px solid #d6e0e7;
+	padding: 0.5em 0.75em;
+	text-align: left;
+}
+
+th {
+	border-bottom-width: 2px;
+	font-weight: bold;
+}
+
+tbody tr:nth-child( even ) {
+	background: rgba( 214, 224, 231, 0.25 );
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 0 1em 1.5em;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #d6e0e7;
+	margin: 1.5em 0;
+}

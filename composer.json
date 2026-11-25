@@ -20,7 +20,15 @@
 	},
 	"require": {
 		"php": ">=7.4",
-		"backdrop-dev/fonts": "dev-develop#c64cb8aafbacae0eea6231b0d86228c8a5d8940d",
-		"backdrop-dev/framework": "dev-develop#7989430268cc98d99a993e0e6bd6f11d3f418a8a"
+		"backdrop-dev/framework": "^2.0",
+		"backdrop-dev/view": "^1.0.3",
+		"backdrop-dev/tools": "^1.0",
+		"backdrop-dev/template-helpers": "^1.0.1",
+		"backdrop-dev/template-hierarchy": "^1.0",
+		"backdrop-dev/template-manager": "^1.0",
+		"backdrop-dev/theme": "^1.0.7",
+		"backdrop-dev/pagination": "^1.0",
+		"backdrop-dev/fonts": "^1.0.3",
+		"backdrop-dev/customize": "^1.0.6"
 	}
 }

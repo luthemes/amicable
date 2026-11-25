@@ -14,6 +14,7 @@
  */
 namespace Amicable;
 
+use Amicable\Tools\Svg;
 use function Amicable\Vite\asset;
 
 /**
@@ -40,6 +41,10 @@ add_action( 'wp_enqueue_scripts', function() {
 		'copied'     => __( 'Copied', 'amicable' ),
 		'copyFailed' => __( 'Copy failed', 'amicable' ),
 		'copyCode'   => __( 'Copy code', 'amicable' ),
+		// The button shows an icon, not text: Iconoir copy / check / xmark.
+		'copyIcon'   => Svg::render( 'copy' ),
+		'copiedIcon' => Svg::render( 'check' ),
+		'failedIcon' => Svg::render( 'xmark' ),
 	] );
 
 	// Enqueue Navigation.

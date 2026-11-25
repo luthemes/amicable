@@ -26,6 +26,12 @@
 	var copyFailedLabel = strings.copyFailed || 'Copy failed';
 	var copyCodeLabel   = strings.copyCode || 'Copy code';
 
+	// The button shows an icon, not text. The labels above stay for the
+	// screen-reader announcement and as a fallback when an icon is missing.
+	var copyIcon   = strings.copyIcon || copyLabel;
+	var copiedIcon = strings.copiedIcon || copiedLabel;
+	var failedIcon = strings.failedIcon || copyFailedLabel;
+
 	/**
 	 * Copies text. Uses the clipboard API when there is one; otherwise a
 	 * temporary textarea with `execCommand`, for pages without a secure context.
@@ -93,7 +99,7 @@
 
 			button.type = 'button';
 			button.className = 'code-copy';
-			button.textContent = copyLabel;
+			button.innerHTML = copyIcon;
 			button.setAttribute( 'aria-label', copyCodeLabel );
 
 			var resetTimer;
@@ -103,15 +109,15 @@
 
 				try {
 					await copyText( text );
-					button.textContent = copiedLabel;
+					button.innerHTML = copiedIcon;
 					announce( copiedLabel );
 				} catch ( e ) {
-					button.textContent = copyFailedLabel;
+					button.innerHTML = failedIcon;
 					announce( copyFailedLabel );
 				}
 
 				resetTimer = setTimeout( function() {
-					button.textContent = copyLabel;
+					button.innerHTML = copyIcon;
 					announce( '' );
 				}, 2000 );
 			} );

@@ -20,23 +20,23 @@
 		margin-left: 0.75rem;
 		margin-right: 0.75rem;
 	}
+}
 
-	&__title {	
-		font-size: 1.75rem;
-		margin: 0 0 0 1rem;
-		padding: 0;
+.site-title {
+	font-size: 1.75rem;
+	margin: 0 0 0 1rem;
+	padding: 0;
 
-		a {
-			border-bottom: none;
-			color: #757575;
-			text-decoration: none;
-		}
+	a {
+		border-bottom: none;
+		color: #757575;
+		text-decoration: none;
 	}
+}
 
-	&__description {
-		color: #959595;
-		font-size: 15px;
-		margin: 0;
-		padding: 0;
-	}
+.site-description {
+	color: #959595;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
 }

@@ -60,7 +60,7 @@ class Svg {
 		// `wp_kses()` runs. Without the captured values there would be
 		// nothing left to restore if `wp_kses()` strips them. The value is
 		// never hardcoded: Iconoir icons carry `0 0 24 24`, the theme's own
-		// brand icons carry their own (e.g. `0 0 512 512` for wordpress).
+		// brand icons carry their own (e.g. `0 0 512 512` for WordPress).
 		$viewbox = '';
 		if ( preg_match( '/\bviewBox="([^"]*)"/', $svg, $matches ) ) {
 			$viewbox = $matches[1];

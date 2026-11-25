@@ -16,7 +16,7 @@
  * @link      https://luthemes.com/portfolio/amicable
  */
 
-use function Backdrop\is_classicpress;
+use function Backdrop\Theme\is_classicpress;
 
 return [
 

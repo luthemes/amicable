@@ -111,6 +111,113 @@ add_filter( 'nav_menu_css_class', function( $classes, $item, $args, $depth ) {
 }, 10, 4 );
 
 /**
+ * Filter the post class with the theme's entry classes.
+ *
+ * The theme's styles target `.entry` (the 640px content width),
+ * `.entry-type-{type}`, `.entry-format-{format}` and `.is-sticky`.
+ * The framework used to supply these classes; with the framework no
+ * longer handling them, the theme maps them itself from the post.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array  $classes  The CSS classes applied to the post.
+ * @param  array  $class    Extra classes passed to `post_class()`.
+ * @param  int    $post_id  The post ID.
+ * @return array
+ */
+add_filter( 'post_class', function( $classes, $class, $post_id ) {
+
+	if ( is_admin() ) {
+		return $classes;
+	}
+
+	$post = get_post( $post_id );
+
+	// Bail if there's no post to work with.
+	if ( ! $post ) {
+		return $classes;
+	}
+
+	$classes   = [];
+	$post_type = get_post_type( $post );
+
+	// Entry class.
+	$classes[] = 'entry';
+
+	// Post field classes.
+	$classes[] = sprintf( 'entry-type-%s', $post_type );
+
+	// Add post format class.
+	if ( post_type_supports( $post_type, 'post-formats' ) ) {
+
+		$format = get_post_format( $post_id );
+
+		$classes[] = sprintf(
+			'entry-format-%s',
+			$format && ! is_wp_error( $format ) ? $format : 'standard'
+		);
+	}
+
+	// Add taxonomy term classes. By default, no taxonomies (except for
+	// post formats added above) are added.
+	$taxonomies = apply_filters( 'backdrop/attr/post/class/taxonomy', [] );
+
+	foreach ( (array) $taxonomies as $taxonomy ) {
+
+		if ( is_object_in_taxonomy( $post_type, $taxonomy ) ) {
+
+			$terms = get_the_terms( $post_id, $taxonomy );
+
+			if ( $terms && ! is_wp_error( $terms ) ) {
+
+				foreach ( $terms as $term ) {
+
+					$name = 'post_tag' === $taxonomy ? 'tag' : $taxonomy;
+					$slug = sanitize_html_class( $term->slug, $term->term_id );
+
+					$classes[] = sprintf( 'entry-%s-%s', $name, $slug );
+				}
+			}
+		}
+	}
+
+	// Sticky posts.
+	if ( is_home() && ! is_paged() && is_sticky( $post_id ) ) {
+		$classes[] = 'is-sticky';
+	}
+
+	// Password-protected posts.
+	if ( post_password_required( $post_id ) ) {
+		$classes[] = 'post-password-required';
+	} elseif ( $post->post_password ) {
+		$classes[] = 'post-password-protected';
+	}
+
+	// Post thumbnails.
+	if ( current_theme_supports( 'post-thumbnails' ) && has_post_thumbnail( $post_id ) ) {
+		$classes[] = 'has-post-thumbnail';
+	}
+
+	// Has excerpt.
+	if ( post_type_supports( $post_type, 'excerpt' ) && has_excerpt( $post_id ) ) {
+		$classes[] = 'has-excerpt';
+	}
+
+	// Has <!--more--> link.
+	if ( ! is_singular() && false !== strpos( $post->post_content, '<!--more' ) ) {
+		$classes[] = 'has-more-link';
+	}
+
+	// Has <!--nextpage--> links.
+	if ( false !== strpos( $post->post_content, '<!--nextpage' ) ) {
+		$classes[] = 'has-pages';
+	}
+
+	return array_map( 'esc_attr', array_unique( array_merge( $classes, (array) $class ) ) );
+
+}, ~PHP_INT_MAX, 3 );
+
+/**
  * Registers custom templates with ClassicPress.
  *
  * @since  1.0.0

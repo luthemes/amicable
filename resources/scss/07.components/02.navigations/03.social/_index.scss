@@ -29,7 +29,10 @@
                 svg {
                     width: 25px; /* Smaller SVG size */
                     height: 25px;
-                    fill: #ffffff; /* White fill color for SVG */
+                    /* No `fill` here: the Iconoir icons are stroke icons
+                       (`fill="none"` on the `<svg>`), and a CSS fill would
+                       override that and fill them solid. The icons color
+                       themselves with `currentColor` (black, below). */
                     color: black;
                 }
             }

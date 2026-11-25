@@ -3,8 +3,9 @@
  * Social Icons Config.
  *
  * Defines the social icons available to the social menu. Array keys are strings
- * to search for in the menu link URL. Array values are the icon names to use
- * from `/public/svg` without the `.svg` extension.
+ * to search for in the menu link URL. Array values are the icon names to use.
+ * Icons come from the Backdrop icons package, or from `/public/svg/social-icons`
+ * for the brands Iconoir doesn't have.
  *
  * @package   Amicable
  * @author    Benjamin Lu <benlumia007@gmail.com>
@@ -23,15 +24,14 @@ return [
 	'dribbble.com'    => 'dribbble',
 	'dropbox.com'     => 'dropbox',
 	'facebook.com'    => 'facebook',
-	'feed'            => 'rss-square-solid',
+	'feed'            => 'rss-feed',
 	'flickr.com'      => 'flickr',
 	'foursquare.com'  => 'foursquare',
-	'getpocket.com'   => 'getpocket',
+	'getpocket.com'   => 'pocket',
 	'github.com'      => 'github',
-	'plus.google.com' => 'google',
 	'instagram.com'   => 'instagram',
 	'linkedin.com'    => 'linkedin',
-	'mailto:'         => 'envelope-open-regular',
+	'mailto:'         => 'mail',
 	'medium.com'      => 'medium',
 	'pinterest.com'   => 'pinterest',
 	'reddit.com'      => 'reddit',
@@ -46,7 +46,6 @@ return [
 	'twitch.tv'       => 'twitch',
 	'twitter.com'     => 'twitter',
 	'vimeo.com'       => 'vimeo',
-	'vine.co'         => 'vine',
 	'vk.com'          => 'vk',
 	'wordpress.org'   => 'wordpress',
 	'wordpress.com'   => 'wordpress',

@@ -34,6 +34,7 @@ $theme = function_exists( 'Backdrop\booted' ) && Backdrop\booted()
  * booting the application. These service providers form the foundation for the theme.
  */
 $theme->provider( Backdrop\Fonts\Provider::class );
+$theme->provider( Backdrop\Icons\Provider::class );
 $theme->provider( Backdrop\Pagination\Provider::class );
 $theme->provider( Backdrop\Theme\Provider::class );
 $theme->provider( Backdrop\Template\Hierarchy\Provider::class );

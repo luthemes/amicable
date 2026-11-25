@@ -78,6 +78,39 @@ add_action( 'init', function() {
 }, 5 );
 
 /**
+ * Replace the default menu item classes with the theme's BEM classes.
+ *
+ * The theme's navigation styles and scripts target `.menu__item`,
+ * `.has-children` and `.menu__item--current`. The framework used to
+ * supply these classes; with the framework no longer handling menus,
+ * the theme maps them itself from WordPress's default classes.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array   $classes  The CSS classes applied to the menu item.
+ * @param  object  $item     The menu item object.
+ * @param  object  $args     The `wp_nav_menu()` arguments.
+ * @param  integer $depth    The menu item depth.
+ * @return array
+ */
+add_filter( 'nav_menu_css_class', function( $classes, $item, $args, $depth ) {
+
+	$original = $classes;
+	$classes  = [ 'menu__item' ];
+
+	if ( in_array( 'menu-item-has-children', $original, true ) ) {
+		$classes[] = 'has-children';
+	}
+
+	if ( in_array( 'current-menu-item', $original, true ) || in_array( 'current_page_item', $original, true ) ) {
+		$classes[] = 'menu__item--current';
+	}
+
+	return $classes;
+
+}, 10, 4 );
+
+/**
  * Registers custom templates with ClassicPress.
  *
  * @since  1.0.0
